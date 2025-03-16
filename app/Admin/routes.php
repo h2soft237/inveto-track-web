@@ -3,6 +3,7 @@
 use Illuminate\Routing\Router;
 use Encore\Admin\Facades\Admin;
 use Illuminate\Support\Facades\Route;
+use App\Admin\Controllers\CodeGenController;
 use App\Admin\Controllers\CompanyController;
 use App\Admin\Controllers\EmployeesController;
 use App\Admin\Controllers\StockItemController;
@@ -30,6 +31,7 @@ Route::group([
     $router->resource('stock-items', StockItemController::class);
     $router->resource('stock-records', StockRecordController::class);
     $router->resource('companies-edit', CompanyEditController::class);
+    $router->resource('gens', CodeGenController::class);
 
 });
 
