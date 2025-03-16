@@ -36,7 +36,7 @@ class ApiController extends BaseController
     {
         $u = Utils::get_user($r);
         if ($u == null) {
-            Utils::error("Unauthonticated.");
+            Utils::error("Unauthenticated.");
         }
         $roles = DB::table('admin_role_users')->where('user_id', $u->id)->get();
         $company = Company::find($u->company_id);
@@ -60,7 +60,7 @@ class ApiController extends BaseController
         $u = Utils::get_user($r);
         //die($u->name);
         if ($u == null) {
-            Utils::error("Unauthonticated.");
+            Utils::error("Unauthenticated.");
         }
         $model = "App\Models\\" . $model;
         $data = $model::where('company_id', $u->company_id)->limit(100000)->get();
@@ -75,7 +75,7 @@ class ApiController extends BaseController
     {
         $u = Utils::get_user($r);
         if ($u == null) {
-            Utils::error("Unauthonticated.");
+            Utils::error("Unauthenticated.");
         }
         $model = BudgetItem::class;
         $object = BudgetItem::find($r->get('id'));
@@ -207,7 +207,7 @@ class ApiController extends BaseController
         $u = Utils::get_user($r);
         //die($u);
         if ($u == null) {
-            Utils::error("Unauthonticated.");
+            Utils::error("Unauthenticated.");
         }
         $model = "App\Models\\" . $model;
         $object = $model::find($r->get('id'));
