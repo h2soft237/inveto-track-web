@@ -1,4 +1,4 @@
-php artisan make:model CodeGen -m
+php artisan make:model BudgetItem -m
 
 php artisan admin:make CodeGenController --model=App\Models\CodeGen
 //DataExport

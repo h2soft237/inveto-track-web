@@ -135,7 +135,7 @@ class ApiController extends BaseController
     {
         $u = Utils::get_user($r);
         if ($u == null) {
-            Utils::error("Unauthonticated.");
+            Utils::error("Unauthenticated.");
         }
 
         $treasurer = null;
